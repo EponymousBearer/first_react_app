@@ -13,8 +13,9 @@ import contact from "../assets/icons/contact.png"
 import upload from "../assets/icons/upload.png"
 import calendar from "../assets/icons/calendar.png"
 import setting from "../assets/icons/setting.png"
-
+import drive from "../assets/icons/drive.png"
 export default {
+  drive,
   upload,
   calendar,
   setting,
