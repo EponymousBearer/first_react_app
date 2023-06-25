@@ -1,19 +1,24 @@
+
 const COLORS = {
   primary: "#312651",
   secondary: "#444262",
   tertiary: "#FF7754",
 
   gray: "#83829A",
+  cancel: "#8083A3",
   gray2: "#C1C0C8",
 
   white: "#FFFFFF",
   lightWhite: "#FAFAFC",
 
   black: "#000000",
-  purple: "#6B59CC"
+  purple: "#6B59CC",
+  linewhite: "#D8D8D8",
+  defaultbtn: "#6B59CC",
 };
 
 const FONT = {
+  Lato: "LatoFont",
   regular: "DMRegular",
   medium: "DMMedium",
   bold: "DMBold",

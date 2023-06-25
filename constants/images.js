@@ -14,7 +14,21 @@ import upload from "../assets/icons/upload.png"
 import calendar from "../assets/icons/calendar.png"
 import setting from "../assets/icons/setting.png"
 import drive from "../assets/icons/drive.png"
+import plus from "../assets/icons/plus.png"
+import nicholas from "../assets/images/nicholas.png"
+import bradley from "../assets/images/bradley.png"
+import ernest from "../assets/images/ernest.png"
+import marvin from "../assets/images/marvin.png"
+import teresa from "../assets/images/teresa.png"
+import fred from "../assets/images/fred.png"
 export default {
+  ernest,
+  marvin,
+  teresa,
+  fred,
+  bradley,
+  nicholas,
+  plus,
   drive,
   upload,
   calendar,

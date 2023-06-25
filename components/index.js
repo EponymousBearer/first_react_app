@@ -13,9 +13,11 @@ import Admin_company_info from "./admin/company_info/company_info"
 import Admin_report from "../components/admin/report/report";
 import Admin_user from "../components/admin/user/user";
 import Dashboard from "./dashboard/dashboard";
+import Table from "./jobdetails/table/userTable";
 // common
 
 export {
+  Table,
   ScreenHeaderBtn,
   Welcome,
   Admin_company_info,
