@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-import ScreenBtn from "../../jobdetails/buttons/ScreenBtn";
+import ScreenBtn from "../../sub_components/header/ScreenHeaderBtn";
 import styles from "./report.style";
 import { COLORS, SIZES, images } from "../../../constants";
 

@@ -1,21 +1,15 @@
-import { useState } from "react";
-import { useRouter } from "expo-router";
 import { TextInput } from "react-native";
 import {
   View,
   Text,
   Image,
   TouchableOpacity,
-  Button,
 } from "react-native";
 
 import styles from "./user.styles";
 import { COLORS, SIZES, images } from "../../../constants";
-import PopularJobCard from "../../common/cards/popular/PopularJobCard";
-import useFetch from "../../../hook/useFetch";
-import { color } from "react-native-reanimated";
-import ScreenBtn from "../../jobdetails/buttons/ScreenBtn";
-import Table from "../../jobdetails/table/userTable";
+import ScreenBtn from "../../sub_components/header/ScreenHeaderBtn";
+import Table from "../../sub_components/table/userTable";
 
 const TitleWithImage = ({ title, tag, imageSource }) => {
   return (
