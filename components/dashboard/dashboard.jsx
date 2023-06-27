@@ -2,6 +2,7 @@ import { View, Text, Image } from "react-native";
 
 import styles from "./dashboard.style";
 import { images } from "../../constants";
+import { ScrollView } from "react-native-web";
 
 const Count = ({ number, title, color }) => {
   return (
@@ -15,7 +16,7 @@ const Count = ({ number, title, color }) => {
 const Dashboard = () => {
 
   return (
-
+    <ScrollView>
     <View style={{ flexDirection: "row", gap: 20 }}>
       <View style={styles.sidebar}>
 
@@ -52,6 +53,7 @@ const Dashboard = () => {
 
       </View>
     </View>
+    </ScrollView>
   );
 };
 

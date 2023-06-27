@@ -10,9 +10,11 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontWeight: "bold",
-    fontSize: 16,   
+    fontSize: 16,
     textAlign: 'center',
     flex: 1,
+    whiteSpace: 'nowrap',
+    marginLeft:-30,
   },
 });
 

@@ -2,6 +2,7 @@ import {
   View,
   Text,
   Image,
+  ScrollView,
 } from "react-native";
 import CompanyTable from "../../sub_components/companytable/companyTable";
 import styles from "./company_info.styles";
@@ -33,48 +34,49 @@ const Count = ({ number, title }) => {
 const Admin_company_info = () => {
 
   return (
-    <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.container}>
 
-      <View style={styles.header}>
-        <View style={{ alignItems: "center" }}>
-          <View style={styles.imageContainer}>
-            <Image source={images.profile_pic} style={styles.profileImage} />
-            <Image source={images.drive} style={styles.driveImage} />
-          </View>
-          <Text style={styles.headerTitle}>Qualitygram</Text>
-          {/* <TouchableOpacity>
+        <View style={styles.header}>
+          <View style={{ alignItems: "center" }}>
+            <View style={styles.imageContainer}>
+              <Image source={images.profile_pic} style={styles.profileImage} />
+              <Image source={images.drive} style={styles.driveImage} />
+            </View>
+            <Text style={styles.headerTitle}>Qualitygram</Text>
+            {/* <TouchableOpacity>
             <Text style={styles.headerBtn}>Admin</Text>
           </TouchableOpacity> */}
+          </View>
+          <View style={{ alignItems: "flex-start" }}>
+
+            <TitleWithImage title="Company Information" tag="company photo, name and detail" imageSource={images.doc} />
+            <TitleWithImage title="Teams and Users" tag="add new users and create teams" imageSource={images.team} />
+            <TitleWithImage title="Reports" tag="usage and actions report" imageSource={images.report} />
+
+          </View>
+
         </View>
-        <View style={{ alignItems: "flex-start" }}>
 
-          <TitleWithImage title="Company Information" tag="company photo, name and detail" imageSource={images.doc} />
-          <TitleWithImage title="Teams and Users" tag="add new users and create teams" imageSource={images.team} />
-          <TitleWithImage title="Reports" tag="usage and actions report" imageSource={images.report} />
+        <View>
 
-        </View>
+          <View style={styles.rightContainer}>
+            <Text style={styles.heading}>Company Information</Text>
 
-      </View>
+            <View style={styles.box}>
+              <View style={{ flex: 1 }}>
+                <CompanyTable />
+              </View>
+            </View>
 
-      <View>
-
-        <View style={styles.rightContainer}>
-          <Text style={styles.heading}>Company Information</Text>
-
-          <View style={styles.box}>
-            <View style={{ flex: 1 }}>
-              <CompanyTable />
+            <View style={{ flexDirection: "row", gap: 10 }}>
+              <ScreenBtn text={"Update Setting"} bgcolor={COLORS.defaultbtn} textcolor={COLORS.white}></ScreenBtn>
+              <ScreenBtn text={"Cancel"} bgcolor={COLORS.white} textcolor={COLORS.cancel}></ScreenBtn>
             </View>
           </View>
 
-          <View style={{ flexDirection: "row", gap: 10 }}>
-            <ScreenBtn text={"Update Setting"} bgcolor={COLORS.defaultbtn} textcolor={COLORS.white}></ScreenBtn>
-            <ScreenBtn text={"Cancel"} bgcolor={COLORS.white} textcolor={COLORS.cancel}></ScreenBtn>
-          </View>
         </View>
-
-      </View>
-      {/* 
+        {/* 
       <View style={styles.cardsContainer}>
         {isLoading ? (
           <ActivityIndicator size='large' color={COLORS.primary} />
@@ -96,7 +98,8 @@ const Admin_company_info = () => {
           /> 
         )}
       </View>*/}
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 

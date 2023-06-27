@@ -1,4 +1,4 @@
-import { TextInput } from "react-native";
+import { ScrollView, TextInput } from "react-native";
 import {
   View,
   Text,
@@ -40,42 +40,42 @@ const data = {
     [
       { type: "image", value: images.nicholas },
       { type: "text", value: "Nicholas Gordon" },
-      { type: "form", value: <TextInput placeholder="Group Name" style={{fontWeight:600}}/> },
+      { type: "form", value: <TextInput placeholder="Group Name" style={{ fontWeight: 600 }} /> },
       { type: "tag", value: "Business" },
       { type: "button", value: "..." },
 
-    ],[
+    ], [
       { type: "image", value: images.bradley },
       { type: "text", value: "Bradley Malone" },
-      { type: "form", value: <TextInput placeholder="Group Name" style={{fontWeight:600}}/> },
+      { type: "form", value: <TextInput placeholder="Group Name" style={{ fontWeight: 600 }} /> },
       { type: "tag", value: "Business" },
       { type: "button", value: "..." },
 
-    ],[
+    ], [
       { type: "image", value: images.ernest },
       { type: "text", value: "Ernest Masone" },
-      { type: "form", value: <TextInput placeholder="Group Name" style={{fontWeight:600}}/> },
+      { type: "form", value: <TextInput placeholder="Group Name" style={{ fontWeight: 600 }} /> },
       { type: "tag", value: "Business" },
       { type: "button", value: "..." },
 
-    ],[
+    ], [
       { type: "image", value: images.marvin },
       { type: "text", value: "Marvin Lambert" },
-      { type: "form", value: <TextInput placeholder="Group Name" style={{fontWeight:600}}/> },
+      { type: "form", value: <TextInput placeholder="Group Name" style={{ fontWeight: 600 }} /> },
       { type: "tag", value: "Business" },
       { type: "button", value: "..." },
 
-    ],[
+    ], [
       { type: "image", value: images.teresa },
       { type: "text", value: "Teresa Lloyd" },
-      { type: "form", value: <TextInput placeholder="Group Name" style={{fontWeight:600}}/> },
+      { type: "form", value: <TextInput placeholder="Group Name" style={{ fontWeight: 600 }} /> },
       { type: "tag", value: "Business" },
       { type: "button", value: "..." },
 
-    ],[
+    ], [
       { type: "image", value: images.fred },
       { type: "text", value: "Fred Haynes" },
-      { type: "form", value: <TextInput placeholder="Group Name" style={{fontWeight:600}}/> },
+      { type: "form", value: <TextInput placeholder="Group Name" style={{ fontWeight: 600 }} /> },
       { type: "tag", value: "Private" },
       { type: "button", value: "..." },
 
@@ -85,45 +85,46 @@ const data = {
 
 const Admin_user = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.container}>
 
-      <View style={styles.header}>
-        <View style={{ alignItems: "center" }}>
-          <View style={styles.imageContainer}>
-            <Image source={images.profile_pic} style={styles.profileImage} />
-            <Image source={images.drive} style={styles.driveImage} />
+        <View style={styles.header}>
+          <View style={{ alignItems: "center" }}>
+            <View style={styles.imageContainer}>
+              <Image source={images.profile_pic} style={styles.profileImage} />
+              <Image source={images.drive} style={styles.driveImage} />
+            </View>
+            <Text style={styles.headerTitle}>Qualitygram</Text>
+            <TouchableOpacity>
+              <Text style={styles.headerBtn}>Admin</Text>
+            </TouchableOpacity>
           </View>
-          <Text style={styles.headerTitle}>Qualitygram</Text>
-          <TouchableOpacity>
-            <Text style={styles.headerBtn}>Admin</Text>
-          </TouchableOpacity>
+          <View style={{ alignItems: "flex-start" }}>
+
+            <TitleWithImage title="Company Information" tag="company photo, name and detail" imageSource={images.doc} />
+            <TitleWithImage title="Teams and Users" tag="add new users and create teams" imageSource={images.team} />
+            <TitleWithImage title="Reports" tag="usage and actions report" imageSource={images.report} />
+
+          </View>
         </View>
-        <View style={{ alignItems: "flex-start" }}>
 
-          <TitleWithImage title="Company Information" tag="company photo, name and detail" imageSource={images.doc} />
-          <TitleWithImage title="Teams and Users" tag="add new users and create teams" imageSource={images.team} />
-          <TitleWithImage title="Reports" tag="usage and actions report" imageSource={images.report} />
+        <View style={styles.rightContainer}>
+          <Text style={styles.heading}>Users And Group</Text>
 
+          <View style={styles.box}><Table data={data}></Table></View>
+
+          <View style={{ flexDirection: "row", gap: 10 }}>
+            <ScreenBtn text={"Update Setting"} bgcolor={COLORS.defaultbtn} textcolor={COLORS.white}></ScreenBtn>
+            <ScreenBtn text={"Cancel"} bgcolor={COLORS.white} textcolor={COLORS.cancel}></ScreenBtn>
+          </View>
         </View>
-      </View>
 
-      <View style={styles.rightContainer}>
-        <Text style={styles.heading}>Users And Group</Text>
-
-        <View style={styles.box}><Table data={data}></Table></View>
-
-        <View style={{flexDirection:"row", gap:10}}>
-          <ScreenBtn text={"Update Setting"} bgcolor={COLORS.defaultbtn} textcolor={COLORS.white}></ScreenBtn>
-          <ScreenBtn text={"Cancel"} bgcolor={COLORS.white} textcolor={COLORS.cancel}></ScreenBtn>
+        <View style={{ marginLeft: 200 }}>
+          <View style={styles.addButton}>
+            <Image source={images.plus} style={{ margin: 12 }}></Image>
+          </View>
         </View>
-      </View>
-
-      <View style={{ marginLeft: 200 }}>
-        <View style={styles.addButton}>
-          <Image source={images.plus} style={{ margin: 12 }}></Image>
-        </View>
-      </View>
-      {/* 
+        {/* 
       <View style={styles.cardsContainer}>
         {isLoading ? (
           <ActivityIndicator size='large' color={COLORS.primary} />
@@ -145,7 +146,8 @@ const Admin_user = () => {
           /> 
         )}
       </View>*/}
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 

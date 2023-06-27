@@ -21,7 +21,13 @@ import ernest from "../assets/images/ernest.png"
 import marvin from "../assets/images/marvin.png"
 import teresa from "../assets/images/teresa.png"
 import fred from "../assets/images/fred.png"
+import mobilebar from "../assets/images/mobilebar.png"
+import back_icon from "../assets/icons/back_icon.png"
+import mail from "../assets/icons/mail.png"
 export default {
+  mail,
+  back_icon,
+  mobilebar,
   ernest,
   marvin,
   teresa,
