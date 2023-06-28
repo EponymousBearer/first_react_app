@@ -24,7 +24,18 @@ import fred from "../assets/images/fred.png"
 import mobilebar from "../assets/images/mobilebar.png"
 import back_icon from "../assets/icons/back_icon.png"
 import mail from "../assets/icons/mail.png"
+import homebar from "../assets/icons/homebar.png"
+import name from "../assets/icons/name.png"
+import password from "../assets/icons/password.png"
+import confirm from '../assets/icons/confirm.png'
+import thankyou from "../assets/images/thankyou.png"
+
 export default {
+  thankyou,
+  name,
+  password,
+  confirm,
+  homebar,
   mail,
   back_icon,
   mobilebar,

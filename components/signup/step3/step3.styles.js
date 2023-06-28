@@ -1,37 +1,56 @@
 import { StyleSheet } from "react-native";
-import { FONT, SIZES, COLORS } from "../../constants";
+import { FONT, SIZES, COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
     container2: {
         flexDirection: "column",
         width: 375,
         height: 812,
+        marginHorizontal: 20,
     },
-    back_icon: {
+    image: {
+        alignItems: "center",
+        marginTop:80,
+    },
+    cancelbutton: {
         marginTop: 40,
-        marginLeft: 25,
-        height: 24,
-        width: 24,
+        height: 40,
+        width: 92,
         flexDirection: "row",
-        alignItems: "flex-start",
+        alignSelf: "flex-end",
+        backgroundColor: "#F6F6F6",
+        borderRadius: 6
+    },
+
+    cancelButtonText: {
+        color: "#8083A3",
+        marginLeft: 25,
+        marginTop: 10,
     },
     container: {
         flex: 1,
         paddingHorizontal: 20,
+        marginVertical: 20,
+        marginTop: -110
     },
     mailContainer: {
-        marginBottom:20,
+        marginBottom: 20,
+        color: "#8083A3"
     },
     textInputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent:"space-between",
+        justifyContent: "space-between",
         borderBottomWidth: 1,
         borderBottomColor: '#ECEEF5',
     },
     textInput: {
         flex: 1,
         height: 40,
+        color: "#8083A3"
+    },
+    text: {
+        color: "#8083A3"
     },
     icon: {
         width: 16,
@@ -51,22 +70,25 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     checkbox: {
-        marginRight: 10,
+        marginLeft: 20,
+        marginBottom: 15,
     },
     checkboxLabel: {
         fontSize: 16,
+        marginLeft: 15,
+        marginBottom: 15,
         color: "#8083A3",
     },
     heading: {
-        flex:1,
+        flex: 1,
         textAlign: "center",
-        justifyContent: 'center',
-        alignItems: 'center',
+        marginTop: 80
     },
     header: {
-        lineHeight: 42,
-        fontSize: 24,
-        fontWeight: "bold",
+        lineHeight: 52,
+        fontSize: 32,
+        fontWeight: "500",
+        marginTop:-40
     },
     headerTitle: {
         fontSize: 16,
@@ -76,10 +98,6 @@ const styles = StyleSheet.create({
         fontSize: SIZES.medium,
         fontFamily: FONT.medium,
         color: COLORS.gray,
-    },
-    buttonContainer: {
-        marginTop: 50,
-        alignSelf: 'flex-end',
     },
     addButton: {
         width: 36,

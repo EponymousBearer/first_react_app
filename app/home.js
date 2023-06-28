@@ -7,13 +7,14 @@ import {
   Nearbyjobs,
   Admin,
   ScreenHeaderBtn,
-  Welcome,
   Admin_report,
   Admin_user,
   Admin_company_info,
   Dashboard,
 } from "../components";
-import step1 from "../components/signup/step1";
+import step1 from "../components/signup/step1/step1";
+import step2 from "../components/signup/step2/step2";
+import step3 from "../components/signup/step3/step3"
 
 const Stack = createStackNavigator();
 
@@ -66,6 +67,19 @@ const Home = () => {
           component={step1}
           options={{ title: "Step 1" }}
         />
+        <Stack.Screen
+          name="Step 2"
+          component={step2}
+          options={{ title: "Step 2" }}
+        />
+        <Stack.Screen
+          name="Step 3"
+          component={step3}
+          options={{ title: "Step 3" }}
+        />
+        <Stack.Screen name="step1" component={step1} />
+        <Stack.Screen name="step2" component={step2} />
+        <Stack.Screen name="step3" component={step3} />
       </Stack.Navigator>
 
       {/* <ScrollView showsVerticalScrollIndicator={false}>
@@ -103,6 +117,12 @@ const SettingsScreen = () => {
       </TouchableOpacity>
       <TouchableOpacity onPress={() => goToScreen("Step 1")}>
         <Text>Step 1</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => goToScreen("Step 2")}>
+        <Text>Step 2</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => goToScreen("Step 3")}>
+        <Text>Step 3</Text>
       </TouchableOpacity>
     </View>
   );

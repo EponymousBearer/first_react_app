@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     width: 170,
+    height:40
   },
   btnText: {
     fontWeight: "bold",
@@ -14,7 +15,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flex: 1,
     whiteSpace: 'nowrap',
-    marginLeft:-30,
   },
 });
 
