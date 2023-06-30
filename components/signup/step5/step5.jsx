@@ -68,7 +68,7 @@ const step5 = () => {
                         )}
                     </View>
                     <View style={styles.confirmBtn}>
-                        <MobileBtn text={"Confirm"} bgcolor={'#2FD0A0'}></MobileBtn>
+                        <MobileBtn textcolor={COLORS.black} text={"Confirm"} bgcolor={'#2FD0A0'}></MobileBtn>
                     </View>
 
                 </View>

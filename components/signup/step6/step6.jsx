@@ -1,172 +1,109 @@
 import React, { useState } from 'react';
-import {
-    View,
-    Text,
-    Image,
-    TextInput,
-    CheckBox,
-    Button,
-    ScrollView,
-    TouchableOpacity
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity, FlatList, Image } from 'react-native';
+import { ScrollView } from 'react-native';
 import styles from "./step6.styles";
 import { COLORS, SIZES, images } from "../../../constants";
-import ScreenBtn from "../../sub_components/buttons/ScreenBtn/ScreenBtn";
-import step1 from '../step1/step1';
-import { useNavigation } from '@react-navigation/native';
+import MobileBtn from '../../sub_components/buttons/Mobilebtn/MobileBtn';
+import ScreenBtn from '../../sub_components/buttons/ScreenBtn/ScreenBtn';
+import { useSafeArea } from 'react-native-safe-area-context';
 
 const Step6 = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [agree, setAgree] = useState(false);
-    const navigation = useNavigation()
+    const [messages, setMessages] = useState([]);
+    const [currentMessage, setCurrentMessage] = useState('');
 
-    const handleNameChange = (text) => {
-        setName(text);
-    };
+    const handleSendMessage = () => {
+        if (currentMessage) {
+            const currentTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
 
-    const handleEmailChange = (text) => {
-        setEmail(text);
-    };
+            const newMessage = {
+                user: 'Gary Chen', // Replace with the current user's name
+                message: currentMessage,
+                timestamp: currentTime,
+            };
 
-    const handlePasswordChange = (text) => {
-        setPassword(text);
-    };
-
-    const handleConfirmPasswordChange = (text) => {
-        setConfirmPassword(text);
-    };
-
-    const handleAgreeToggle = () => {
-        setAgree(!agree);
-    };
-
-    const handleSignUp = () => {
-        if (email && password && confirmPassword && agree) {
-            // Perform sign-up logic here
-            console.log('Name:', name);
-            console.log('Email:', email);
-            console.log('Password:', password);
-            console.log('Confirm Password:', confirmPassword);
-            console.log('Agreed to conditions:', agree);
-            navigation.navigate('step3');
-        } else {
-            // Display error or validation message
-            console.log('Please enter all required information and agree to the conditions.');
+            setMessages((prevMessages) => [...prevMessages, newMessage]);
+            setCurrentMessage('');
         }
-    };
+    }
 
     return (
         <ScrollView>
-            <View style={styles.container2}>
 
-                <View style={{ marginTop: 7 }}>
+            <View style={styles.mainContainer}>
+
+                <View>
                     <Image source={images.mobilebar}></Image>
                 </View>
 
-                <View style={styles.cancelbutton}>
-                    <TouchableOpacity onPress={step1}>
-                        <Text style={styles.cancelButtonText}>Cancel</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={styles.heading}>
-                    <Text style={styles.header}>Enter Position & Dept</Text>
-                    <Text style={styles.headerTitle}>Enter your details to proceed further</Text>
-                </View>
-
-                <View style={styles.container}>
-
-                    <View style={styles.mailContainer}>
-                        <Text style={styles.text}>Email</Text>
-                        <View style={styles.textInputContainer}>
-                            <TextInput
-                                style={styles.textInput}
-                                placeholder="Enter Your Email"
-                                value={email}
-                                onChangeText={handleEmailChange}
-                            />
-                            <Image
-                                style={styles.icon}
-                                source={images.mail}
-                            />
-                        </View>
-                    </View>
-                    
-                    <View style={styles.mailContainer}>
-                        <Text style={styles.text}>First and Last name</Text>
-                        <View style={styles.textInputContainer}>
-                            <TextInput
-                                style={styles.textInput}
-                                placeholder="Enter Your Name"
-                                value={name}
-                                onChangeText={handleNameChange}
-                            />
-                            <Image
-                                style={styles.icon}
-                                source={images.name}
-                            />
-                        </View>
-                    </View>
-
-                    <View style={styles.mailContainer}>
-                        <Text style={styles.text}>Password</Text>
-                        <View style={styles.textInputContainer}>
-                            <TextInput
-                                style={styles.textInput}
-                                placeholder="Enter Your Password"
-                                value={password}
-                                onChangeText={handlePasswordChange}
-                                secureTextEntry
-                            />
-                            <Image
-                                style={styles.icon}
-                                source={images.password}
-                            />
-                        </View>
-                    </View>
-
-                    <View style={styles.mailContainer}>
-                        <Text style={styles.text}>Confirm Password</Text>
-                        <View style={styles.textInputContainer}>
-                            <TextInput
-                                style={styles.textInput}
-                                placeholder="Confirm Your Password"
-                                value={confirmPassword}
-                                onChangeText={handleConfirmPasswordChange}
-                                secureTextEntry
-                            />
-                            <Image
-                                style={styles.icon}
-                                source={images.confirm}
-                            />
-                        </View>
+                <View style={styles.container1}>
+                    <View style={styles.heading}>
+                        <Text style={styles.header}>Flex N Gate</Text>
+                        <Image style={{ marginLeft: 70 }} source={images.search}></Image>
                     </View>
                 </View>
 
-                <View style={styles.checkboxContainer}>
-                    <CheckBox
-                        style={styles.checkbox}
-                        value={agree}
-                        onValueChange={handleAgreeToggle}
-                    />
-                    <Text style={styles.checkboxLabel}>I agree to the conditions</Text>
+                <View style={styles.container2}>
+                    <Image source={images.stamping}></Image>
                 </View>
 
-                <View style={{ alignSelf: 'center', marginBottom: 30 }}>
-                    <ScreenBtn paddingHorizontal={170} textcolor={COLORS.lightWhite} text={"Continue"} marginLeft={-30} handlePress={handleSignUp} disabled={!email || !agree} bgcolor={COLORS.defaultbtn}>
-                        <Button
-                            title="Continue"
-                            onPress={handleSignUp}
-                            disabled={!email || !agree}
+                <View style={styles.container3}>
+                    <Text style={styles.headerTitle}>Part No - 94P293-10393</Text>
+                    <ScreenBtn bgcolor={"#0D1A40"} text={"Side Wrinkles"} textcolor={"#D8D8FF"} fontWeight={400}></ScreenBtn>
+                </View>
+
+                <View style={styles.subcontainer}>
+                    <Text style={{ fontWeight:'bold', fontSize: 15, marginVertical: 7 }}>Status</Text>
+                    <View style={styles.openbutton}>
+                        <View style={{ paddingHorizontal: 10 }}><MobileBtn textcolor={COLORS.black} text={"Open"} bgcolor={"#E8B4B4"}></MobileBtn></View>
+                        <View style={{ paddingHorizontal: 10 }}><MobileBtn text={"Contained"} bgcolor={COLORS.lightWhite}></MobileBtn></View>
+                        <View style={{ paddingHorizontal: 10 }}><MobileBtn text={"Closed"} bgcolor={COLORS.lightWhite}></MobileBtn></View>
+                    </View>
+                </View>
+
+                <View style={styles.container4}>
+
+                    <View style={{ flex: 1 }}>
+                        <FlatList
+                            data={messages.slice(-3)} // Display only the last 3 messages
+                            keyExtractor={(item, index) => index.toString()}
+                            renderItem={({ item }) => (
+                                <View style={{ padding: 10 }}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'baseline', marginBottom: 5 }}>
+                                        <Text style={{ fontWeight: '500' }}>{item.user}</Text>
+                                        <Text style={{ fontSize: 12, color: 'gray', marginLeft: 10 }}>{item.timestamp}</Text>
+                                    </View>
+                                    <View style={{ flexDirection: 'row', alignItems: 'baseline', marginBottom: 5 }}>
+                                        <Image source={images.status}></Image>
+                                        <Text style={{ backgroundColor: COLORS.lightWhite, alignSelf: 'flex-start', marginLeft: 6, paddingVertical: 7, paddingHorizontal: 10, borderTopRightRadius: 15, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>{item.message}</Text>
+                                    </View>
+                                </View>
+                            )}
                         />
-                    </ScreenBtn>
+
+                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+
+                            <View style={{ flexDirection: 'row', borderRadius: 10, backgroundColor: COLORS.lightWhite, justifyContent: 'space-around', alignItems: 'center', width: 335 }}>
+                                <Image source={images.camera}></Image>
+                                <Image source={images.rec}></Image>
+                                <TextInput
+                                    style={{ textAlign: 'center', color: "#8083A3" }}
+                                    placeholder="Type your message"
+                                    value={currentMessage}
+                                    onChangeText={setCurrentMessage}
+                                />
+                                <Image source={images.voice}></Image>
+                                <TouchableOpacity onPress={handleSendMessage} style={{ padding: 10, backgroundColor: '#6B59CC', borderRadius: 10 }}>
+                                    <Image source={images.icon}></Image>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
                 </View>
 
-                <View style={{ alignItems: 'center', marginBottom: -6 }}><Image source={images.homebar}></Image></View>
+                <View style={styles.homebar}><Image source={images.homebar}></Image></View>
+
             </View>
+
         </ScrollView>
     );
 }

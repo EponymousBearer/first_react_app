@@ -33,8 +33,16 @@ import stamping from '../assets/images/stamping.png'
 import people from "../assets/icons/people.png"
 import qrcode from '../assets/icons/qrcode.png'
 import camera from "../assets//icons/camera.png"
+import rec from "../assets/icons/rec.png"
+import voice from "../assets/icons/voice.png"
+import icon from "../assets/icons/Icon.png"
+import status from "../assets/icons/status.png"
 
 export default {
+  status,
+  icon,
+  voice,
+  rec,
   qrcode,
   camera,
   people,

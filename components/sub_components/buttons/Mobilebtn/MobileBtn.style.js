@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flex: 1,
     whiteSpace: 'nowrap',
+    color:"#8083A3"
   },
 });
 
