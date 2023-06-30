@@ -12,9 +12,13 @@ import {
   Admin_company_info,
   Dashboard,
 } from "../components";
-import step1 from "../components/signup/step1/step1";
-import step2 from "../components/signup/step2/step2";
-import step3 from "../components/signup/step3/step3"
+import Step1 from "../components/signup/step1/step1";
+import Step2 from "../components/signup/step2/step2";
+import Step3 from "../components/signup/step3/step3";
+import Step5 from "../components/signup/step5/step5";
+import Step6 from "../components/signup/step6/step6";
+import Step7 from "../components/signup/step7/step7";
+import Step8 from "../components/signup/step8/step8";
 
 const Stack = createStackNavigator();
 
@@ -64,22 +68,39 @@ const Home = () => {
         />
         <Stack.Screen
           name="Step 1"
-          component={step1}
+          component={Step1}
           options={{ title: "Step 1" }}
         />
         <Stack.Screen
           name="Step 2"
-          component={step2}
+          component={Step2}
           options={{ title: "Step 2" }}
         />
         <Stack.Screen
           name="Step 3"
-          component={step3}
+          component={Step3}
           options={{ title: "Step 3" }}
         />
-        <Stack.Screen name="step1" component={step1} />
-        <Stack.Screen name="step2" component={step2} />
-        <Stack.Screen name="step3" component={step3} />
+        <Stack.Screen
+          name="Step 5"
+          component={Step5}
+          options={{ title: "Step 5" }}
+        />
+        <Stack.Screen
+          name="Step 6"
+          component={Step6}
+          options={{ title: "Step 6" }}
+        />
+        <Stack.Screen
+          name="Step 7"
+          component={Step7}
+          options={{ title: "Step 7" }}
+        />
+        <Stack.Screen
+          name="Step 8"
+          component={Step8}
+          options={{ title: "Step 8" }}
+        />
       </Stack.Navigator>
 
       {/* <ScrollView showsVerticalScrollIndicator={false}>
@@ -123,6 +144,18 @@ const SettingsScreen = () => {
       </TouchableOpacity>
       <TouchableOpacity onPress={() => goToScreen("Step 3")}>
         <Text>Step 3</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => goToScreen("Step 5")}>
+        <Text>Step 5</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => goToScreen("Step 6")}>
+        <Text>Step 6</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => goToScreen("Step 7")}>
+        <Text>Step 7</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => goToScreen("Step 8")}>
+        <Text>Step 8</Text>
       </TouchableOpacity>
     </View>
   );

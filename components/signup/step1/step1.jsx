@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import styles from "./step1.styles";
 import { COLORS, SIZES, images } from "../../../constants";
-import ScreenBtn from "../../sub_components/buttons/ScreenBtn";
+import ScreenBtn from "../../sub_components/buttons/ScreenBtn/ScreenBtn";
 import { Link } from 'expo-router';
 import step2 from "../step2/step2"
 import { useNavigation } from '@react-navigation/native';

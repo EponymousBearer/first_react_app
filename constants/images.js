@@ -29,8 +29,16 @@ import name from "../assets/icons/name.png"
 import password from "../assets/icons/password.png"
 import confirm from '../assets/icons/confirm.png'
 import thankyou from "../assets/images/thankyou.png"
+import stamping from '../assets/images/stamping.png'
+import people from "../assets/icons/people.png"
+import qrcode from '../assets/icons/qrcode.png'
+import camera from "../assets//icons/camera.png"
 
 export default {
+  qrcode,
+  camera,
+  people,
+  stamping,
   thankyou,
   name,
   password,

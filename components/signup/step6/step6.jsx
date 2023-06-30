@@ -9,13 +9,13 @@ import {
     ScrollView,
     TouchableOpacity
 } from "react-native";
-import styles from "./step2.styles";
+import styles from "./step6.styles";
 import { COLORS, SIZES, images } from "../../../constants";
 import ScreenBtn from "../../sub_components/buttons/ScreenBtn/ScreenBtn";
 import step1 from '../step1/step1';
 import { useNavigation } from '@react-navigation/native';
 
-const step2 = () => {
+const Step6 = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -171,4 +171,4 @@ const step2 = () => {
     );
 }
 
-export default step2;
+export default Step6;
