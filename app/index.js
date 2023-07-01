@@ -1,5 +1,4 @@
-import { Redirect } from "expo-router";
+import { AppRegistry } from 'react-native';
+import Layout from './_layout';
 
-export default function Index() {
-    return <Redirect href="/home" />;
-}
+AppRegistry.registerComponent('YourApp', () => Layout);

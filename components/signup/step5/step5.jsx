@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native';
 import styles from "./step5.styles";
 import { COLORS, SIZES, images } from "../../../constants";
 import MobileBtn from '../../sub_components/buttons/Mobilebtn/MobileBtn';
+import { useNavigation } from '@react-navigation/native';
 
 const step5 = () => {
 
@@ -11,6 +12,7 @@ const step5 = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const newdefect = 'New Defect';
     const options = ['Side Wrinkles', 'Splits', 'Imprints', newdefect];
+    const navigation = useNavigation();
 
     const handleToggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -20,6 +22,10 @@ const step5 = () => {
         setSelectedOption(option);
         setIsOpen(false);
     };
+
+    const navigation2 = () => {
+        navigation.navigate('Step6');
+    }
 
     return (
         <ScrollView>
@@ -68,7 +74,7 @@ const step5 = () => {
                         )}
                     </View>
                     <View style={styles.confirmBtn}>
-                        <MobileBtn textcolor={COLORS.black} text={"Confirm"} bgcolor={'#2FD0A0'}></MobileBtn>
+                        <MobileBtn handlePress={navigation2} textcolor={COLORS.black} text={"Confirm"} bgcolor={'#2FD0A0'}></MobileBtn>
                     </View>
 
                 </View>

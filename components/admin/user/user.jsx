@@ -9,7 +9,7 @@ import {
 import styles from "./user.styles";
 import { COLORS, SIZES, images } from "../../../constants";
 import ScreenBtn from "../../sub_components/header/ScreenHeaderBtn";
-import Table from "../../sub_components/table/userTable";
+import Table from "../../sub_components/table/userTable/userTable";
 
 const TitleWithImage = ({ title, tag, imageSource }) => {
   return (

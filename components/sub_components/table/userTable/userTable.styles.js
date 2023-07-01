@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { FONT, SIZES, COLORS } from "../../../constants";
+import { FONT, SIZES, COLORS } from "../../../../constants";
 import { block } from "react-native-reanimated";
 
 const styles = StyleSheet.create({

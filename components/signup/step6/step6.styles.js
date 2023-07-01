@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     },
     openbutton: {
         flexDirection:"row",
-        marginLeft:-10
+        paddingHorizontal:10,
+
     },
     headerTitle: {
         fontSize: 14,

@@ -4,7 +4,7 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import CompanyTable from "../../sub_components/companytable/companyTable";
+import CompanyTable from "../../sub_components/table/companytable/companyTable";
 import styles from "./company_info.styles";
 import { COLORS, SIZES, images } from "../../../constants";
 import ScreenBtn from "../../sub_components/header/ScreenHeaderBtn";

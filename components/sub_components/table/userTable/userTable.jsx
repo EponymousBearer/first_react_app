@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity,} from "react-native";
-import styles from "../table/userTable.styles"
+import styles from "./userTable.styles"
 
 const Table = ({ data }) => {
   return (

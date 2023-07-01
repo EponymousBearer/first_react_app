@@ -15,7 +15,7 @@ import ScreenBtn from "../../sub_components/buttons/ScreenBtn/ScreenBtn";
 import step1 from '../step1/step1';
 import { useNavigation } from '@react-navigation/native';
 
-const step2 = () => {
+const Step2 = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -51,7 +51,7 @@ const step2 = () => {
             console.log('Password:', password);
             console.log('Confirm Password:', confirmPassword);
             console.log('Agreed to conditions:', agree);
-            navigation.navigate('step3');
+            navigation.navigate('Step3');
         } else {
             // Display error or validation message
             console.log('Please enter all required information and agree to the conditions.');
@@ -67,7 +67,7 @@ const step2 = () => {
                 </View>
 
                 <View style={styles.cancelbutton}>
-                    <TouchableOpacity onPress={step1}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Text style={styles.cancelButtonText}>Cancel</Text>
                     </TouchableOpacity>
                 </View>
@@ -171,4 +171,4 @@ const step2 = () => {
     );
 }
 
-export default step2;
+export default Step2;

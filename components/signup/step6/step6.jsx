@@ -6,10 +6,13 @@ import { COLORS, SIZES, images } from "../../../constants";
 import MobileBtn from '../../sub_components/buttons/Mobilebtn/MobileBtn';
 import ScreenBtn from '../../sub_components/buttons/ScreenBtn/ScreenBtn';
 import { useSafeArea } from 'react-native-safe-area-context';
+import OpenBtn from '../../sub_components/buttons/OpenBtn/OpenBtn';
+import { useNavigation } from 'expo-router';
 
 const Step6 = () => {
     const [messages, setMessages] = useState([]);
     const [currentMessage, setCurrentMessage] = useState('');
+    const navigation = useNavigation();
 
     const handleSendMessage = () => {
         if (currentMessage) {
@@ -24,6 +27,16 @@ const Step6 = () => {
             setMessages((prevMessages) => [...prevMessages, newMessage]);
             setCurrentMessage('');
         }
+    }
+
+    const [selectedButton, setSelectedButton] = useState(null);
+
+    const handleButtonPress = (button) => {
+        setSelectedButton(button);
+    };
+
+    const gotonavigation = () => {
+        navigation.navigate('Step7');
     }
 
     return (
@@ -52,11 +65,26 @@ const Step6 = () => {
                 </View>
 
                 <View style={styles.subcontainer}>
-                    <Text style={{ fontWeight:'bold', fontSize: 15, marginVertical: 7 }}>Status</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 15, marginVertical: 7 }}>Status</Text>
                     <View style={styles.openbutton}>
-                        <View style={{ paddingHorizontal: 10 }}><MobileBtn textcolor={COLORS.black} text={"Open"} bgcolor={"#E8B4B4"}></MobileBtn></View>
-                        <View style={{ paddingHorizontal: 10 }}><MobileBtn text={"Contained"} bgcolor={COLORS.lightWhite}></MobileBtn></View>
-                        <View style={{ paddingHorizontal: 10 }}><MobileBtn text={"Closed"} bgcolor={COLORS.lightWhite}></MobileBtn></View>
+                        <OpenBtn
+                            text="Open"
+                            bgcolor="#E8B4B4"
+                            onPress={() => handleButtonPress('Open')}
+                            isSelected={selectedButton === 'Open'}
+                        />
+                        <OpenBtn
+                            text="Contained"
+                            bgcolor="#FFDA55"
+                            onPress={() => handleButtonPress(gotonavigation)}
+                            isSelected={selectedButton === 'Contained'}
+                        />
+                        <OpenBtn
+                            text="Closed"
+                            bgcolor="#32D59A"
+                            onPress={() => handleButtonPress(gotonavigation)}
+                            isSelected={selectedButton === 'Closed'}
+                        />
                     </View>
                 </View>
 

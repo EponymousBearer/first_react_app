@@ -51,7 +51,7 @@ const Step3 = () => {
             console.log('Password:', password);
             console.log('Confirm Password:', confirmPassword);
             console.log('Agreed to conditions:', agree);
-            navigation.navigate('step3');
+            navigation.navigate('Step5');
         } else {
             // Display error or validation message
             console.log('Please enter all required information and agree to the conditions.');

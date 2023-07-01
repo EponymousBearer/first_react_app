@@ -37,8 +37,12 @@ import rec from "../assets/icons/rec.png"
 import voice from "../assets/icons/voice.png"
 import icon from "../assets/icons/Icon.png"
 import status from "../assets/icons/status.png"
+import calendar2 from "../assets/icons/calendar2.png"
+import stampingwrinkles1 from "../assets/images/stampingwrinkles1.png"
 
 export default {
+  stampingwrinkles1,
+  calendar2,
   status,
   icon,
   voice,

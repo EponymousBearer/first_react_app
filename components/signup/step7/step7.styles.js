@@ -2,118 +2,105 @@ import { StyleSheet } from "react-native";
 import { FONT, SIZES, COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
-    container2: {
+    mainContainer: {
         flexDirection: "column",
         width: 375,
         height: 812,
-        marginHorizontal: 20,
+        backgroundColor: "#F3F4F9"
     },
-    image: {
-        alignItems: "center",
-        marginTop:80,
-    },
-    cancelbutton: {
-        marginTop: 40,
-        height: 40,
-        width: 92,
-        flexDirection: "row",
-        alignSelf: "flex-end",
-        backgroundColor: "#F6F6F6",
-        borderRadius: 6
-    },
-
-    cancelButtonText: {
-        color: "#8083A3",
-        marginLeft: 25,
-        marginTop: 10,
-    },
-    container: {
-        flex: 1,
-        paddingHorizontal: 20,
-        marginVertical: 20,
-        marginTop: -110
-    },
-    mailContainer: {
-        marginBottom: 20,
-        color: "#8083A3"
-    },
-    textInputContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: "space-between",
-        borderBottomWidth: 1,
-        borderBottomColor: '#ECEEF5',
-    },
-    textInput: {
-        flex: 1,
-        height: 40,
-        color: "#8083A3"
-    },
-    text: {
-        color: "#8083A3"
-    },
-    icon: {
-        width: 16,
-        height: 16,
-    },
-    input: {
-        height: 40,
-        width: '100%',
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 20,
-        paddingHorizontal: 10,
-    },
-    checkboxContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 20,
-    },
-    checkbox: {
-        marginLeft: 20,
-        marginBottom: 15,
-    },
-    checkboxLabel: {
-        fontSize: 16,
-        marginLeft: 15,
-        marginBottom: 15,
-        color: "#8083A3",
-    },
+    container1: { flex: 0.40, marginHorizontal: 20 },
     heading: {
-        flex: 1,
-        textAlign: "center",
-        marginTop: 80
+        flexDirection: 'row',
+        alignSelf: 'flex-end',
+        marginVertical: 25
     },
     header: {
-        lineHeight: 52,
-        fontSize: 32,
-        fontWeight: "500",
-        marginTop:-40
+        lineHeight: 42,
+        fontSize: 24,
+        fontWeight: "bold",
+    },
+    container2: { flex: 0.8, alignItems: "center" },
+    container3: { flex: 0.2, alignItems: "center", flexDirection: "row", justifyContent: "space-between", marginHorizontal: 20 },
+    subcontainer: {
+        flex:0.25,
+        marginTop: 20,
+        alignItems: 'flex-start',
+        marginHorizontal: 20
+    },
+    openbutton: {
+        flexDirection:"row",
+        paddingHorizontal:10,
+
     },
     headerTitle: {
-        fontSize: 16,
-        color: "#8083A3",
-    },
-    headerBtn: {
-        fontSize: SIZES.medium,
-        fontFamily: FONT.medium,
-        color: COLORS.gray,
-    },
-    addButton: {
-        width: 36,
-        height: 36,
-        backgroundColor: "#0263E0",
-        borderRadius: 100,
-    },
-    box: {
-        width: 960,
-        height: 324,
-        marginTop: 40,
-        marginBottom: 40,
+        fontSize: 14,
+        borderRadius: 8,
         borderWidth: 1,
+        color: "#8083A3",
+        backgroundColor: "#F3F4F9",
+        borderColor: "#F3F4F9",
+        padding: 6
     },
-    rightContainer: {
-        marginLeft: 40
+    container4: { flex: 0.9, flexDirection: "column", marginHorizontal: 20 },
+    dropdownButton: {
+        borderRadius: 5,
+        flexDirection: "row",
+        alignItems: "center",
+        height: 32,
+        width:94,
+        padding: 5,
+        borderWidth: 1,
+        borderColor: 'white',
+        shadowRadius: 10,
+        shadowOffset: {
+            width: 3,
+            height: 5,
+        },
+        shadowOpacity: 0.5,
+        shadowColor: COLORS.gray
+    },
+    dropdownButtonText: {
+        fontSize: 16,
+    },
+    optionsContainer: {
+        marginTop: 10,
+        borderWidth: 1,
+        borderColor: 'white',
+        borderRadius: 5,
+        minWidth: 150,
+        shadowRadius: 10,
+        shadowOffset: {
+            width: 3,
+            height: 5,
+        },
+        shadowOpacity: 0.5,
+        shadowColor: COLORS.gray
+    },
+    newDefectOption: {
+        borderWidth: 1,
+        backgroundColor: 'red',
+        padding: 1,
+        margin: 3,
+        alignSelf: "flex-start",
+        borderRadius: 5,
+        color: "#8083A3",
+        backgroundColor: "#F3F4F9",
+        borderColor: "#F3F4F9",
+        fontSize: 14
+    },
+    optionButton: {
+        padding: 10,
+        borderColor: 'black',
+        alignItems: 'flex-start',
+    },
+    optionText: {
+        fontSize: 16,
+    },
+    homebar: {
+        width: 375,
+        alignItems: 'center',
+        height: 6,
+        marginTop:30
     }
 });
 

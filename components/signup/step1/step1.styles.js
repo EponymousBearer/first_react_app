@@ -3,6 +3,7 @@ import { FONT, SIZES, COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
     container2: {
+        alignSelf:"center",
         flexDirection: "column",
         width: 375,
         height: 812,
