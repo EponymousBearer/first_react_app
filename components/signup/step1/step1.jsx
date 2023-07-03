@@ -31,7 +31,6 @@ const Step1 = () => {
   };
 
   return (
-    <ScrollView>
       <View style={styles.container2}>
         <View style={{ marginTop: 7 }}>
           <Image source={images.mobilebar} />
@@ -82,7 +81,6 @@ const Step1 = () => {
           <Image source={images.homebar} />
         </View>
       </View>
-    </ScrollView>
   );
 };
 

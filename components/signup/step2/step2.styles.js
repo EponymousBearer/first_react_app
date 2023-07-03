@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         width: 375,
         height: 812,
         marginHorizontal: 20,
+        alignSelf:"center"
     },
     cancelbutton: {
         marginTop: 40,

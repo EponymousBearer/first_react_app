@@ -59,7 +59,7 @@ const Step3 = () => {
     };
 
     return (
-        <ScrollView>
+
             <View style={styles.container2}>
 
                 <View style={{ marginTop: 7 }}>
@@ -95,7 +95,6 @@ const Step3 = () => {
 
                 <View style={{ alignItems: 'center', marginBottom: -6 }}><Image source={images.homebar}></Image></View>
             </View>
-        </ScrollView>
     );
 }
 

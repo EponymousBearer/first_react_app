@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         width: 375,
         height: 812,
-        backgroundColor: COLORS.lightWhite
+        backgroundColor: COLORS.lightWhite,
+        alignSelf:"center"
     },
     container1: { flex: 0.40, marginHorizontal: 20 },
     heading: {

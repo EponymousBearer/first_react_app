@@ -28,7 +28,6 @@ const step5 = () => {
     }
 
     return (
-        <ScrollView>
 
             <View style={styles.mainContainer}>
 
@@ -92,7 +91,6 @@ const step5 = () => {
 
             </View>
 
-        </ScrollView>
     );
 }
 
